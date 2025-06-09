@@ -1,6 +1,5 @@
 <body><DOCTYPE! html>
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lestaria-Home</title>
@@ -19,10 +18,10 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#home"> Home</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#artikel">Artikel</a></li>
-            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#home" class="nav-link"> Home</a></li>
+            <li><a href="#tentang" class="nav-link">Tentang</a></li>
+            <li><a href="#artikel" class="nav-link">Artikel</a></li>
+            <li><a href="#kontak" class="nav-link">Kontak</a></li>
         </ul>
     </nav>
     </header>
@@ -214,28 +213,30 @@
                 </ul>
             </div>
         <div class="kontaknya">
+            <ul>
             <h4>Medsos</h4>
                 <div class="email">
                  <i class="logo-foot" data-feather="mail"></i>
-                <p>info@lestaria.id</p>
+                <li><a href="">info@lestaria.id</a></li>
             </div>
             <div class="email">
                  <i class="logo-foot" data-feather="linkedin"></i>
-                <p>Lestariaco</p>
+                <li><a href="">Lestariaco</a></li>
             </div>
             <div class="email">
                  <i class="logo-foot" data-feather="instagram"></i>
-                <p>@Lestaria_Foundation</p>
+                <li><a href="">@Lestaria_Foundation</a></li>
             </div>
             <div class="email">
                  <i class="logo-foot" data-feather="facebook"></i>
-                <p>Lestaria Foundation</p>
+                <li><a href="">Lestaria Foundation</a></li>
             </div>
             
                 <div class="telp">
                 <i class="logo-foot" data-feather="phone"></i>
-                <p>+6212345678</p>
+                <li><a href="">+6212345678</a></li>
                 </div>
+                </ul>
         </div>
     </div>
 
@@ -245,57 +246,29 @@
      
     <script>
       feather.replace();
+
+      window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
     
 </body>
 </html>
-=======
-   <title>Zaki</title>
-<style>
-* {
-    font-family: Trebuchet MS Regular, Arial, sans-serif;
-}
 
-#drig{
-   position: relative;
-   left:30px;
-   top: 20px;
-   padding : 10px 20px;
-   border: none;
-   border-radius: 30px;
-   color:white;
-   max-width: 5%;
-}
-       </style>
-
-
-</head>
-
-
-<img id = "drig" src = "C:/Users/DELL/Downloads/Tak berjudul12_20241129125610.png">
-
-<script language = "javascript">
-let button = document.getElementById("drig"); // ini ganti pke nama id dari atribut
-
-
-let event;
-let d = 20; let h = 30; let e = 10
-button.style.top= d+"px"; 
-button.style.left = h+"px";
-button.onmousedown = (function(){e = 1;});
-onmouseup = (function(){e = 0;});
-setInterval(()=>{
-document.addEventListener("mousemove", function(event, element){
-button.style.top= d+"px"; 
-button.style.left = h+"px";
-if(e == 1){
-d = (event.clientY-43);
-h = (event.clientX-50);
-} 
-else{if(d<450){d+=0.1;}}
-});
-}, 100)
-
-</script>
-</body>
->>>>>>> 3f39f8bc4f4ec1192f60a3e3eeed7cb6f2c08faa
