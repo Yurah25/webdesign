@@ -23,7 +23,7 @@
         top: 0;
         left: 0;
         z-index: 9999;
-        padding-bottom: 5px;
+        padding: 5px 2rem; /* Menambahkan padding horizontal */
     }
      nav.main-nav ul{ /* Menggunakan nav.main-nav untuk spesifikasi */
         padding-right: 25px;
@@ -130,7 +130,7 @@
 
     .kontak-deskripsi-topik{
         background: linear-gradient(135deg, #065f46, #047857);
-        padding: 2rem 2rem 5rem 2rem;
+        padding: 2rem 2rem 5rem 2rem; /* Menambahkan padding horizontal 2rem */
         display: flex;
         gap: 10rem;
         font-weight: 500;
@@ -748,6 +748,7 @@
             justify-content: space-between;
             align-items: center;
             height: 5.5rem; /* Kembali ke tinggi normal */
+            padding: 5px 1rem; /* Menyesuaikan padding horizontal untuk mobile */
         }
         .hero h1{
             font-size: 2.7rem;
@@ -759,7 +760,7 @@
         }
         
         .name-logo{
-            padding-left: 1.5rem; /* Sesuaikan padding */
+            padding-left: 1rem; /* Sesuaikan padding */
             padding-right: 0; /* Hapus padding right */
             padding-top: 0; /* Hapus padding top */
         }
