@@ -264,6 +264,19 @@
     <script>
       feather.replace();
 
+      // Get a reference to the header element
+      const header = document.querySelector('header');
+      let headerHeight = 0; // Initialize to 0
+
+      // Calculate header height once it's rendered or on resize
+      const updateHeaderHeight = () => {
+          headerHeight = header.offsetHeight;
+      };
+
+      window.addEventListener('load', updateHeaderHeight);
+      window.addEventListener('resize', updateHeaderHeight);
+
+
       window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -272,7 +285,8 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                // Adjust for header height when determining active section
+                if (scrollY >= (sectionTop - headerHeight - 50)) { // Added -50 for a small buffer
                     current = section.getAttribute('id');
                 }
             });
@@ -336,6 +350,33 @@
           if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target) && mobileNav.classList.contains('active')) {
               closeMobileMenu();
           }
+      });
+
+      // New: Smooth scroll adjustment for all navigation links
+      const allNavLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+
+      allNavLinks.forEach(link => {
+          link.addEventListener('click', function(event) {
+              // Only prevent default if it's a hash link
+              if (this.hash !== '') {
+                  event.preventDefault(); // Mencegah perilaku default jump
+
+                  const targetId = this.hash; // #home, #tentang, etc.
+                  const targetSection = document.querySelector(targetId);
+
+                  if (targetSection) {
+                      const offsetTop = targetSection.offsetTop;
+                      // Hitung posisi scroll yang disesuaikan dengan tinggi header
+                      const scrollPosition = offsetTop - headerHeight; 
+                      
+                      window.scrollTo({
+                          top: scrollPosition,
+                          behavior: 'smooth'
+                      });
+                  }
+                  closeMobileMenu(); // Tutup menu mobile setelah mengklik link
+              }
+          });
       });
     </script>
 </body>
