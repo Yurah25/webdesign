@@ -1,4 +1,5 @@
-*,html{
+    /* General styles for both main and article pages */
+    *,html{
         font-family:'Lexend', sans-serif ;
         padding: 0;
         margin: 0;
@@ -323,10 +324,30 @@
        .artikel-card{
             background: rgba(255,255,255,0.1);
             border-radius: 15px;
-            padding: 2rem;
-    
+            /* Removed padding from artikel-card to allow image to be full width */
             border: 1px solid rgba(255,255,255,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensure content respects border-radius */
+        }
+
+        .artikel-card .artikel-image {
+            width: 100%;
+            height: 180px; /* Fixed height for consistency */
+            background-size: cover;
+            background-position: center;
+            /* Apply border-radius to match card top corners */
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-bottom: 0; /* No margin here, padding will be on content below */
+            /* Negative margins to pull image to edges */
+            margin: -1px; /* Small negative margin to ensure no gap from border */
+            width: calc(100% + 2px); /* Adjust width for negative margin */
+            height: 180px;
+        }
+
+        /* New class for content inside artikel card with padding */
+        .artikel-content-padded {
+            padding: 2rem; /* Apply original padding here */
         }
 
 
@@ -768,6 +789,98 @@
 .close-menu i {
     font-size: 2rem;
     stroke-width: 2.5px;
+}
+
+/* Article Detail Page Styles */
+.article-detail-hero {
+    min-height: 400px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 5.5rem; /* Space for fixed header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; /* Add padding for content inside overlay */
+}
+
+.article-detail-hero h1 {
+    color: #FBDB93;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 1; /* Ensure text is above overlay */
+    position: relative;
+}
+
+.article-detail-hero p {
+    color: #D2D0A0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    z-index: 1;
+    position: relative;
+}
+
+.article-content-section {
+    padding: 4rem 2rem;
+    background-color: #f8fafc; /* Light background for article content */
+    min-height: 80vh;
+}
+
+.article-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    line-height: 1.8;
+    color: #374151;
+}
+
+.article-content-container h2 {
+    font-size: 2.2rem;
+    color: #065f46;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content-container p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.article-content-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.article-content-container .image-caption {
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-align: center;
+    font-style: italic;
+    margin-top: -1rem; /* Adjust to be closer to image */
+    margin-bottom: 2rem;
 }
 
 
