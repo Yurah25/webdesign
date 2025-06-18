@@ -30,6 +30,10 @@
         </div>
         <!-- Menu Samping untuk mobile -->
         <nav class="mobile-nav">
+            <!-- Tombol Tutup (X) -->
+            <div class="close-menu">
+                <i data-feather="x"></i>
+            </div>
             <ul>
                 <li><a href="#home" class="nav-link-mobile"> Home</a></li>
                 <li><a href="#tentang" class="nav-link-mobile">Tentang</a></li>
@@ -299,10 +303,16 @@
         observer.observe(item);
       });
 
-      // Logika untuk menu responsif (hamburger menu)
+      // Logika untuk menu responsif (hamburger menu dan tombol tutup)
       const menuToggle = document.querySelector('.menu-toggle');
       const mobileNav = document.querySelector('.mobile-nav');
       const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
+      const closeMenuButton = document.querySelector('.close-menu'); // Referensi tombol X
+
+      // Fungsi untuk menutup menu
+      const closeMobileMenu = () => {
+          mobileNav.classList.remove('active');
+      };
 
       menuToggle.addEventListener('click', () => {
           mobileNav.classList.toggle('active');
@@ -311,8 +321,21 @@
       // Menutup menu mobile saat salah satu link diklik
       navLinksMobile.forEach(link => {
           link.addEventListener('click', () => {
-              mobileNav.classList.remove('active');
+              closeMobileMenu();
           });
+      });
+
+      // Menutup menu mobile saat tombol X diklik
+      closeMenuButton.addEventListener('click', () => {
+          closeMobileMenu();
+      });
+
+      // Menutup menu mobile saat klik di luar area menu
+      document.body.addEventListener('click', (event) => {
+          // Periksa jika klik bukan pada menu-toggle atau di dalam mobile-nav
+          if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target) && mobileNav.classList.contains('active')) {
+              closeMobileMenu();
+          }
       });
     </script>
 </body>

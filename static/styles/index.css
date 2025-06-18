@@ -659,6 +659,20 @@
     color: #FBDB93;
 }
 
+/* Gaya untuk tombol tutup (X) */
+.close-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #D2D0A0;
+}
+
+.close-menu i {
+    font-size: 2rem;
+    stroke-width: 2.5px;
+}
+
 
     @media (max-width:1366px){
         html{
