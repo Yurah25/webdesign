@@ -16,12 +16,25 @@
             <i class="user" data-feather="feather"></i>
             <h1>Lesta<span>ria</span></h1>
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="#home" class="nav-link"> Home</a></li>
                 <li><a href="#tentang" class="nav-link">Tentang</a></li>
                 <li><a href="#artikel" class="nav-link">Artikel</a></li>
                 <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+        </nav>
+        <!-- Tombol Hamburger untuk mobile -->
+        <div class="menu-toggle">
+            <i data-feather="menu"></i>
+        </div>
+        <!-- Menu Samping untuk mobile -->
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="nav-link-mobile"> Home</a></li>
+                <li><a href="#tentang" class="nav-link-mobile">Tentang</a></li>
+                <li><a href="#artikel" class="nav-link-mobile">Artikel</a></li>
+                <li><a href="#kontak" class="nav-link-mobile">Kontak</a></li>
             </ul>
         </nav>
     </header>
@@ -284,6 +297,22 @@
 
       animatedItems.forEach(item => {
         observer.observe(item);
+      });
+
+      // Logika untuk menu responsif (hamburger menu)
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
+
+      menuToggle.addEventListener('click', () => {
+          mobileNav.classList.toggle('active');
+      });
+
+      // Menutup menu mobile saat salah satu link diklik
+      navLinksMobile.forEach(link => {
+          link.addEventListener('click', () => {
+              mobileNav.classList.remove('active');
+          });
       });
     </script>
 </body>

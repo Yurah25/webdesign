@@ -1,12 +1,10 @@
-    *,html{
+*,html{
         font-family:'Lexend', sans-serif ;
         padding: 0;
         margin: 0;
         scroll-behavior: smooth;
         box-sizing: border-box;
     }
-
-   
 
     body{
     background-color: #ebd8ad;
@@ -27,7 +25,7 @@
         z-index: 9999;
         padding-bottom: 5px;
     }
-     nav ul{
+     nav.main-nav ul{ /* Menggunakan nav.main-nav untuk spesifikasi */
         padding-right: 25px;
         list-style-type: none;
         display: flex;
@@ -35,7 +33,7 @@
         gap: 25px;
     }
 
-    nav a{
+    nav.main-nav a{ /* Menggunakan nav.main-nav untuk spesifikasi */
         color: #D2D0A0;
         text-decoration: none;
         font-weight: 700;
@@ -44,7 +42,7 @@
     }
     
 
-    nav a::after{
+    nav.main-nav a::after{ /* Menggunakan nav.main-nav untuk spesifikasi */
         content: '';
         position: absolute;
         width: 0;
@@ -56,11 +54,11 @@
         transition: 0.3s;
     }
      
-    nav a:hover, a.active{
+    nav.main-nav a:hover, nav.main-nav a.active{ /* Menggunakan nav.main-nav untuk spesifikasi */
         color: #DDA853;
     }
 
-    nav a:hover::after, a.active::after {
+    nav.main-nav a:hover::after, nav.main-nav a.active::after { /* Menggunakan nav.main-nav untuk spesifikasi */
         width: 100%;
     }
 
@@ -89,7 +87,7 @@
         align-items: center;
         justify-content: center;
         padding: 4rem;
-        background-image: url("/static/image/hero.jpg");
+        background-image: url("[https://placehold.co/1920x1080/537d5d/D2D0A0?text=Hero+Image](https://placehold.co/1920x1080/537d5d/D2D0A0?text=Hero+Image)"); /* Placeholder image */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;     
@@ -607,6 +605,61 @@
   transform: translateY(0);
 }
 
+/* Gaya untuk menu responsif */
+.menu-toggle {
+    display: none; /* Sembunyikan secara default */
+    cursor: pointer;
+    margin-right: 1.5rem;
+    color: #D2D0A0;
+}
+
+.menu-toggle i {
+    font-size: 2rem;
+    stroke-width: 2.5px;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Sembunyikan di luar layar */
+    width: 250px;
+    height: 100%;
+    background-color: #3d6546;
+    padding-top: 6rem;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 9998; /* Di bawah header */
+}
+
+.mobile-nav.active {
+    right: 0; /* Tampilkan menu */
+}
+
+.mobile-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    margin-bottom: 1rem;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #D2D0A0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: #537d5d;
+    color: #FBDB93;
+}
+
+
     @media (max-width:1366px){
         html{
             font-size: 75%;
@@ -648,6 +701,14 @@
         order: -1;
         
     }
+    /* Sembunyikan menu utama dan tampilkan toggle di layar kecil */
+    nav.main-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
         
     }
     @media (max-width:450px){
@@ -669,24 +730,24 @@
         scale: 1;
     }
         header{
-            flex-direction: column;
-            gap: 1rem;
-            height: 8rem;
-
+            flex-direction: row; /* Kembali ke baris agar logo dan menu toggle tetap di satu baris */
+            justify-content: space-between;
+            align-items: center;
+            height: 5.5rem; /* Kembali ke tinggi normal */
         }
         .hero h1{
             font-size: 2.7rem;
         }
         
         nav{
-            padding-bottom: 3rem;
+            padding-bottom: 0; /* Hapus padding bottom */
             padding-right: 0;
         }
         
         .name-logo{
-            padding-left: 0;
-            padding-right: 2rem;
-            padding-top: 1rem;
+            padding-left: 1.5rem; /* Sesuaikan padding */
+            padding-right: 0; /* Hapus padding right */
+            padding-top: 0; /* Hapus padding top */
         }
         .logo-foot{
         scale: 0.6;
