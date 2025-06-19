@@ -1,4 +1,5 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,9 +7,8 @@
     <link rel="stylesheet" type="text/css" href="static/styles/index.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -256,7 +256,7 @@
                 <h4>Artikel</h4>
                 <ul class="isi-topik" >
                     <li><a href="#">Daur Ulang</a></li>
-                    <li><a href="artikel-pentingnya-lingkungan.html">Mengapa Menjaga Lingkungan Penting?</a></li> <!-- Updated link -->
+                    <li><a href="artikel-pentingnya-lingkungan.html">Mengapa Menjaga Lingkungan Penting?</a></li>
                     <li><a href="#">Reboisasi</a></li>
                     <li><a href="#">Konservasi Air</a></li>
                     <li><a href="#">Energi Terbarukan</a></li>
@@ -305,22 +305,19 @@
     </footer>
     
     <script>
-      feather.replace();
+        feather.replace();
 
-      // Get a reference to the header element
-      const header = document.querySelector('header');
-      let headerHeight = 0; // Initialize to 0
+        const header = document.querySelector('header');
+        let headerHeight = 0;
 
-      // Calculate header height once it's rendered or on resize
-      const updateHeaderHeight = () => {
-          headerHeight = header.offsetHeight;
-      };
+        const updateHeaderHeight = () => {
+            headerHeight = header.offsetHeight;
+        };
 
-      window.addEventListener('load', updateHeaderHeight);
-      window.addEventListener('resize', updateHeaderHeight);
+        window.addEventListener('load', updateHeaderHeight);
+        window.addEventListener('resize', updateHeaderHeight);
 
-
-      window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
             
@@ -328,8 +325,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                // Adjust for header height when determining active section
-                if (scrollY >= (sectionTop - headerHeight - 50)) { // Added -50 for a small buffer
+                if (scrollY >= (sectionTop - headerHeight - 50)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -345,175 +341,162 @@
         // Kode ini akan mencari elemen dengan class 'animated-item'
         const animatedItems = document.querySelectorAll('.animated-item');
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Animasi hanya berjalan sekali
-          }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
         });
-      }, {
-        threshold: 0.1 // Elemen dianggap terlihat jika 10% bagiannya masuk layar
-      });
 
-      animatedItems.forEach(item => {
-        observer.observe(item);
-      });
+        animatedItems.forEach(item => {
+            observer.observe(item);
+        });
 
-      // Logika untuk menu responsif (hamburger menu dan tombol tutup)
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mobileNav = document.querySelector('.mobile-nav');
-      const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
-      const closeMenuButton = document.querySelector('.close-menu'); // Referensi tombol X
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
+        const closeMenuButton = document.querySelector('.close-menu');
 
-      // Fungsi untuk menutup menu
-      const closeMobileMenu = () => {
-          mobileNav.classList.remove('active');
-      };
+        const closeMobileMenu = () => {
+            mobileNav.classList.remove('active');
+        };
 
-      menuToggle.addEventListener('click', () => {
-          mobileNav.classList.toggle('active');
-      });
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
 
-      // Menutup menu mobile saat salah satu link diklik
-      navLinksMobile.forEach(link => {
-          link.addEventListener('click', () => {
-              closeMobileMenu();
-          });
-      });
+        navLinksMobile.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
 
-      // Menutup menu mobile saat tombol X diklik
-      closeMenuButton.addEventListener('click', () => {
-          closeMobileMenu();
-      });
+        closeMenuButton.addEventListener('click', () => {
+            closeMobileMenu();
+        });
 
-      // Menutup menu mobile saat klik di luar area menu
-      document.body.addEventListener('click', (event) => {
-          // Periksa jika klik bukan pada menu-toggle atau di dalam mobile-nav
-          if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target) && mobileNav.classList.contains('active')) {
-              closeMobileMenu();
-          }
-      });
+        document.body.addEventListener('click', (event) => {
+            if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target) && mobileNav.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
 
-      // New: Smooth scroll adjustment for all navigation links
-      const allNavLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        const allNavLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
 
-      allNavLinks.forEach(link => {
-          link.addEventListener('click', function(event) {
-              // Only prevent default if it's a hash link
-              if (this.hash !== '') {
-                  event.preventDefault(); // Mencegah perilaku default jump
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                if (this.hash !== '') {
+                    event.preventDefault();
 
-                  const targetId = this.hash; // #home, #tentang, etc.
-                  const targetSection = document.querySelector(targetId);
+                    const targetId = this.hash;
+                    const targetSection = document.querySelector(targetId);
 
-                  if (targetSection) {
-                      const offsetTop = targetSection.offsetTop;
-                      // Hitung posisi scroll yang disesuaikan dengan tinggi header
-                      const scrollPosition = offsetTop - headerHeight; 
-                      
-                      window.scrollTo({
-                          top: scrollPosition,
-                          behavior: 'smooth'
-                      });
-                  }
-                  closeMobileMenu(); // Tutup menu mobile setelah mengklik link
-              }
-          });
-      });
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop;
+                        const scrollPosition = offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                    closeMobileMenu();
+                }
+            });
+        });
 
-      // Slider Logic
-      const slides = document.querySelectorAll('.slide');
-      const prevBtn = document.querySelector('.prev-slide');
-      const nextBtn = document.querySelector('.next-slide');
-      const sliderDotsContainer = document.querySelector('.slider-dots');
+        // Slider Logic
+const slidesContainer = document.querySelector('.slides'); // This container's transform will no longer be used for movement
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev-slide');
+const nextBtn = document.querySelector('.next-slide');
+const sliderDotsContainer = document.querySelector('.slider-dots');
 
-      let currentSlideIndex = 0;
-      let slideInterval;
+let currentSlideIndex = 0;
+let slideInterval;
 
-      // Function to show a specific slide
-      const showSlide = (index) => {
-          slides.forEach((slide, i) => {
-              slide.classList.remove('active-slide');
-              if (i === index) {
-                  slide.classList.add('active-slide');
-              }
-          });
-          updateDots(index);
-      };
+const showSlide = (index) => {
+    // 1. Remove 'active' class from all slides
+    slides.forEach((slide) => {
+        slide.classList.remove('active'); // Use 'active' class for opacity control
+    });
 
-      // Function to go to the next slide
-      const nextSlide = () => {
-          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-          showSlide(currentSlideIndex);
-      };
+    // 2. Add 'active' class to the current slide to make it visible
+    slides[index].classList.add('active'); // This class will control opacity in CSS
 
-      // Function to go to the previous slide
-      const prevSlide = () => {
-          currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-          showSlide(currentSlideIndex);
-      };
+    // No need to manipulate slidesContainer.style.transform for fade effect
+    // slidesContainer.style.transform = `translateX(-${index * 100}%)`; // REMOVE THIS LINE
 
-      // Function to create and update navigation dots
-      const createDots = () => {
-          sliderDotsContainer.innerHTML = ''; // Clear existing dots
-          slides.forEach((_, i) => {
-              const dot = document.createElement('span');
-              dot.classList.add('dot');
-              dot.addEventListener('click', () => {
-                  currentSlideIndex = i;
-                  showSlide(currentSlideIndex);
-                  resetAutoPlay();
-              });
-              sliderDotsContainer.appendChild(dot);
-          });
-          updateDots(currentSlideIndex);
-      };
+    updateDots(index);
+};
 
-      // Function to update active dot
-      const updateDots = (activeIndex) => {
-          document.querySelectorAll('.dot').forEach((dot, i) => {
-              dot.classList.toggle('active-dot', i === activeIndex);
-          });
-      };
+const nextSlide = () => {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    showSlide(currentSlideIndex);
+};
 
-      // Auto-play functionality
-      const startAutoPlay = () => {
-          slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-      };
+const prevSlide = () => {
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+};
 
-      const stopAutoPlay = () => {
-          clearInterval(slideInterval);
-      };
+const createDots = () => {
+    sliderDotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => {
+            currentSlideIndex = i;
+            showSlide(currentSlideIndex);
+            resetAutoPlay();
+        });
+        sliderDotsContainer.appendChild(dot);
+    });
+    updateDots(currentSlideIndex);
+};
 
-      const resetAutoPlay = () => {
-          stopAutoPlay();
-          startAutoPlay();
-      };
+const updateDots = (activeIndex) => {
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active-dot', i === activeIndex);
+    });
+};
 
-      // Event Listeners for slider buttons
-      prevBtn.addEventListener('click', () => {
-          prevSlide();
-          resetAutoPlay();
-      });
+const startAutoPlay = () => {
+    slideInterval = setInterval(nextSlide, 5000);
+};
 
-      nextBtn.addEventListener('click', () => {
-          nextSlide();
-          resetAutoPlay();
-      });
+const stopAutoPlay = () => {
+    clearInterval(slideInterval);
+};
 
-      // Pause auto-play on hover
-      const sliderContainer = document.querySelector('.slider-container');
-      sliderContainer.addEventListener('mouseenter', stopAutoPlay);
-      sliderContainer.addEventListener('mouseleave', startAutoPlay);
+const resetAutoPlay = () => {
+    stopAutoPlay();
+    startAutoPlay();
+};
 
-      // Initialize slider on load
-      window.addEventListener('load', () => {
-          createDots();
-          showSlide(currentSlideIndex);
-          startAutoPlay();
-      });
+prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoPlay();
+});
 
+nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoPlay();
+});
+
+const sliderContainer = document.querySelector('.slider-container');
+sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+window.addEventListener('load', () => {
+    createDots();
+    showSlide(currentSlideIndex);
+    startAutoPlay();
+});
     </script>
 </body>
 </html>

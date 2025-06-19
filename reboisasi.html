@@ -1,14 +1,14 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lestaria - Reboisasi: Menghijaukan Kembali Bumi Kita</title>
+    <title>Lestaria-Home</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/index.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="static/styles/index.css"> 
 </head>
 <body>
     <header>
@@ -18,10 +18,10 @@
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html#home" class="nav-link"> Home</a></li>
-                <li><a href="index.html#tentang" class="nav-link">Tentang</a></li>
-                <li><a href="index.html#artikel" class="nav-link active">Artikel</a></li>
-                <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
+                <li><a href="#home" class="nav-link"> Home</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang</a></li>
+                <li><a href="#artikel" class="nav-link">Artikel</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
             </ul>
         </nav>
         <div class="menu-toggle">
@@ -32,45 +32,216 @@
                 <i data-feather="x"></i>
             </div>
             <ul>
-                <li><a href="index.html#home" class="nav-link-mobile"> Home</a></li>
-                <li><a href="index.html#tentang" class="nav-link-mobile">Tentang</a></li>
-                <li><a href="index.html#artikel" class="nav-link-mobile active">Artikel</a></li>
-                <li><a href="index.html#kontak" class="nav-link-mobile">Kontak</a></li>
+                <li><a href="#home" class="nav-link-mobile"> Home</a></li>
+                <li><a href="#tentang" class="nav-link-mobile">Tentang</a></li>
+                <li><a href="#artikel" class="nav-link-mobile">Artikel</a></li>
+                <li><a href="#kontak" class="nav-link-mobile">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="article-detail-hero" style="background-image: url('https://placehold.co/1920x400/065f46/DDA853?text=Reboisasi');">
-        <div class="hero-overlay">
-            <h1>Reboisasi: Menghijaukan Kembali Bumi Kita</h1>
-            <p>Dipublikasikan oleh Lestaria Foundation pada 19 Juni 2025</p>
+    <section class="hero" id="home">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide active-slide" style="background-image: url('static/image/hero.jpg');">
+                    <div class="slide-content">
+                        <h1>BERSAMA KAMI</h1>
+                        <p>mencipta kehidupan yang harmoni dengan menjaga lingkungan yang asri</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('static/image/hero2.jpg');">
+                    <div class="slide-content">
+                        <h1>LINGKUNGAN BERSIH</h1>
+                        <p>adalah cerminan dari hati yang bersih dan pikiran yang jernih</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('static/image/hero3.jpg');">
+                    <div class="slide-content">
+                        <h1>MASA DEPAN HIJAU</h1>
+                        <p>dimulai dari langkah kecil kita hari ini</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav-buttons">
+                <button class="prev-slide"><i data-feather="chevron-left"></i></button>
+                <button class="next-slide"><i data-feather="chevron-right"></i></button>
+            </div>
+            <div class="slider-dots">
+                </div>
         </div>
     </section>
 
-    <section class="article-content-section">
-        <div class="article-content-container">
-            <p>Reboisasi adalah upaya penanaman kembali hutan yang telah rusak akibat deforestasi, kebakaran, atau aktivitas manusia lainnya. Proses ini sangat krusial untuk menjaga keseimbangan ekosistem dan mendukung kehidupan di bumi.</p>
-            
-            <h2>Mengapa Reboisasi Penting?</h2>
-            <p>Hutan adalah paru-paru dunia. Mereka menyerap karbon dioksida dan melepaskan oksigen, membantu mengatur iklim global. Selain itu, hutan adalah habitat bagi jutaan spesies tumbuhan dan hewan, serta sumber air bersih. Ketika hutan rusak, kita tidak hanya kehilangan keanekaragaman hayati, tetapi juga meningkatkan risiko bencana alam seperti banjir dan tanah longsor.</p>
-            
-            <img src="https://placehold.co/800x450/065f46/DDA853?text=Penanaman+Pohon" alt="Penanaman Pohon">
-            <p class="image-caption">Setiap bibit yang ditanam adalah harapan untuk masa depan yang lebih hijau.</p>
+    <section class="tentang-kami" id="tentang">
+        <div class="tentang-container">
+            <div class="tentang-header animated-item">
+                <h2>Tentang Kami</h2>
+                <p class="subtitle">Bersama Membangun Masa Depan yang Berkelanjutan</p>
+            </div>
 
-            <h2>Manfaat Reboisasi</h2>
-            <p>Reboisasi memiliki banyak manfaat. Ini membantu mengembalikan keanekaragaman hayati, mencegah erosi tanah, dan meningkatkan kualitas air. Hutan yang sehat juga berperan dalam siklus hidrologi, membantu menyimpan air tanah dan mengurangi dampak kekeringan. Dari sisi ekonomi, reboisasi dapat menciptakan lapangan kerja lokal dan memberikan sumber daya berkelanjutan jika dikelola dengan baik.</p>
+            <div class="tentang-content">
+                <div class="tentang-text animated-item">
+                    <h3>Siapa Kami?</h3>
+                    <p>
+                        <span class="highlight">Lestaria</span> adalah organisasi masyarakat yang berdedikasi pada pelestarian lingkungan hidup, aksi sosial, dan promosi gaya hidup sehat. Didirikan pada tahun <span class="highlight">2006</span> oleh CEO Robin, organisasi ini lahir dari keprihatinan mendalam terhadap kondisi lingkungan yang semakin memburuk.
+                    </p>
+                    <p>
+                        Kami percaya bahwa setiap individu memiliki peran penting dalam menjaga kelestarian bumi. Melalui berbagai program inovatif dan kolaborasi lintas sektor, kami mengajak seluruh elemen masyarakat untuk bersinergi menciptakan lingkungan yang sehat dan berkelanjutan.
+                    </p>
+                </div>
 
-            <h2>Peran Kita dalam Reboisasi</h2>
-            <p>Mendukung upaya reboisasi bisa dilakukan dengan berbagai cara. Anda bisa berpartisipasi dalam program penanaman pohon, menyumbang untuk organisasi yang fokus pada reboisasi, atau memilih produk yang bersertifikat ramah lingkungan. Kesadaran akan pentingnya menjaga hutan adalah langkah awal yang paling penting.</p>
-            
-            <img src="https://placehold.co/800x450/047857/D2D0A0?text=Hutan+Kembali+Lestari" alt="Hutan Kembali Lestari">
-            <p class="image-caption">Hutan yang lestari mendukung kehidupan yang berkelanjutan.</p>
+                <div class="tentang-visual animated-item">
+                    <div class="visual-circle">
+                        <div class="visual-content">
+                            <i data-feather="globe" size="48"></i>
+                            <h4>19 Tahun</h4>
+                            <p>Berpengalaman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <h2>Kesimpulan</h2>
-            <p>Reboisasi bukan hanya sekadar menanam pohon; ini adalah tentang membangun kembali ekosistem yang rapuh dan memastikan kelangsungan hidup planet kita. Mari bersama-sama berkontribusi dalam upaya reboisasi untuk menciptakan dunia yang lebih sehat dan hijau bagi generasi mendatang.</p>
+            <div class="stats-section">
+                <div class="stat-card animated-item">
+                    <i data-feather="users" size="32"></i>
+                    <h4>50K+</h4>
+                    <p>Anggota Aktif</p>
+                </div>
+                <div class="stat-card animated-item">
+                    <i data-feather="tree-pine" size="32"></i>
+                    <h4>100K+</h4>
+                    <p>Pohon Ditanam</p>
+                </div>
+                <div class="stat-card animated-item">
+                    <i data-feather="award" size="32"></i>
+                    <h4>25+</h4>
+                    <p>Penghargaan</p>
+                </div>
+                <div class="stat-card animated-item">
+                    <i data-feather="map-pin" size="32"></i>
+                    <h4>15</h4>
+                    <p>Kota Jangkauan</p>
+                </div>
+            </div>
+
+            <div class="mission-vision">
+                <div class="mission animated-item">
+                    <h4><i data-feather="target" size="24"></i>Misi Kami</h4>
+                    <p>
+                        Menggerakkan masyarakat untuk berpartisipasi aktif dalam pelestarian lingkungan melalui edukasi, aksi nyata, dan inovasi berkelanjutan. Kami berkomitmen untuk menciptakan ekosistem yang sehat bagi generasi masa depan.
+                    </p>
+                </div>
+                <div class="vision animated-item">
+                    <h4><i data-feather="eye" size="24"></i>Visi Kami</h4>
+                    <p>
+                        Menjadi organisasi lingkungan terdepan di Indonesia yang mampu menginspirasi perubahan positif dalam masyarakat, menciptakan harmoni antara manusia dan alam untuk kehidupan yang berkelanjutan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="artikel" id="artikel">
+        <div class="artikel-container">
+            <h2 class="animated-item">Artikel Lingkungan</h2>
+            <div class="artikel-grid">
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/065f46/D2D0A0?text=Daur+Ulang');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="recycle"></i>Daur Ulang</h3>
+                        <p>Pelajari cara mengubah sampah menjadi barang berguna. Daur ulang adalah salah satu cara paling efektif untuk mengurangi limbah dan menjaga lingkungan tetap bersih.</p>
+                        <a href="daur.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/047857/E6DCC3?text=Pentingnya+Lingkungan');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="alert-circle"></i>Mengapa Menjaga Lingkungan Penting?</h3>
+                        <p>Menjaga lingkungan sangat penting untuk keberlangsungan hidup di bumi. Kualitas udara bersih, air yang jernih, dan ekosistem yang sehat adalah fondasi bagi kehidupan manusia dan makhluk lainnya.</p>
+                        <a href="artikel-pentignya-lingkungan.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/065f46/DDA853?text=Reboisasi');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="tree-pine"></i>Reboisasi</h3>
+                        <p>Gerakan menanam pohon untuk mengembalikan hutan yang gundul. Setiap pohon yang ditanam adalah investasi untuk masa depan yang lebih hijau dan berkelanjutan.</p>
+                        <a href="reboisasi.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/047857/D2D0A0?text=Konservasi+Air');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="droplet"></i>Konservasi Air</h3>
+                        <p>Tips dan trik menghemat air dalam kehidupan sehari-hari. Air adalah sumber daya yang berharga dan perlu kita jaga untuk generasi mendatang.</p>
+                        <a href="konversi.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/3d6546/FBDB93?text=Energi+Terbarukan');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="sun"></i>Energi Terbarukan</h3>
+                        <p>Mengenal berbagai jenis energi ramah lingkungan seperti solar panel, angin, dan biomassa yang dapat mengurangi ketergantungan pada energi fosil.</p>
+                        <a href="energi.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="artikel-card animated-item">
+                    <div class="artikel-image" style="background-image: url('https://placehold.co/400x250/059669/E6DCC3?text=Gaya+Hidup+Hijau');"></div>
+                    <div class="artikel-content-padded">
+                        <h3><i data-feather="leaf"></i>Gaya Hidup Hijau</h3>
+                        <p>Panduan praktis menjalani gaya hidup yang ramah lingkungan. Mulai dari pemilihan produk hingga kebiasaan sehari-hari yang mendukung kelestarian alam.</p>
+                        <a href="gaya.html" class="read-more">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <section class="kontak-section" id="kontak">
+        <h2 class="animated-item">Hubungi Kami</h2>
+        <div class="kontak">
+            <div class="kontak-info animated-item">
+                <h3>Informasi Kontak</h3>
+                
+                <div class="kontak-item">
+                    <i data-feather="map-pin"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Blater Jadi Hijau No. 7<br>Purbalingga, 13465</p>
+                    </div>
+                </div>
+                
+                <div class="kontak-item">
+                    <i data-feather="phone"></i>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>+62 21 1234 5678</p>
+                    </div>
+                </div>
+                
+                <div class="kontak-item">
+                    <i data-feather="mail"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@lestaria.id</p>
+                    </div>
+                </div>
+                
+                <div class="kontak-item">
+                    <i data-feather="clock"></i>
+                    <div>
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Jumat: 08:00 - 17:00<br>Sabtu: 08:00 - 12:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <div class="kontak-deskripsi-topik">
             <div class="deskripsi">
@@ -80,13 +251,13 @@
             <div class="topik">
                 <h4>Artikel</h4>
                 <ul class="isi-topik" >
-                    <li><a href="artikel-daur-ulang.html">Daur Ulang</a></li>
+                    <li><a href="#">Daur Ulang</a></li>
                     <li><a href="artikel-pentingnya-lingkungan.html">Mengapa Menjaga Lingkungan Penting?</a></li>
-                    <li><a href="artikel-reboisasi.html">Reboisasi</a></li>
-                    <li><a href="artikel-konservasi-air.html">Konservasi Air</a></li>
-                    <li><a href="artikel-energi-terbarukan.html">Energi Terbarukan</a></li>
-                    <li><a href="artikel-gaya-hidup-hijau.html">Gaya Hidup Hijau</a></li>
-                    <li><a href="index.html#artikel">Lainya...</a></li>
+                    <li><a href="#">Reboisasi</a></li>
+                    <li><a href="#">Konservasi Air</a></li>
+                    <li><a href="#">Energi Terbarukan</a></li>
+                    <li><a href="#">Gaya Hidup Hijau</a></li>
+                    <li><a href="#">Lainya...</a></li>
                 </ul>
             </div>
             <div class="kontaknya">
@@ -142,8 +313,47 @@
         window.addEventListener('load', updateHeaderHeight);
         window.addEventListener('resize', updateHeaderHeight);
 
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - headerHeight - 50)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        const animatedItems = document.querySelectorAll('.animated-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedItems.forEach(item => {
+            observer.observe(item);
+        });
+
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
+        const navLinksMobile = document.querySelectorAll('.nav-link-mobile');
         const closeMenuButton = document.querySelector('.close-menu');
 
         const closeMobileMenu = () => {
@@ -152,6 +362,12 @@
 
         menuToggle.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
+        });
+
+        navLinksMobile.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
         });
 
         closeMenuButton.addEventListener('click', () => {
@@ -168,7 +384,7 @@
 
         allNavLinks.forEach(link => {
             link.addEventListener('click', function(event) {
-                if (this.hash !== '' && this.hostname === window.location.hostname && this.pathname === window.location.pathname) {
+                if (this.hash !== '') {
                     event.preventDefault();
 
                     const targetId = this.hash;
@@ -176,7 +392,7 @@
 
                     if (targetSection) {
                         const offsetTop = targetSection.offsetTop;
-                        const scrollPosition = offsetTop - headerHeight; 
+                        const scrollPosition = offsetTop - headerHeight;
                         
                         window.scrollTo({
                             top: scrollPosition,
@@ -186,6 +402,91 @@
                     closeMobileMenu();
                 }
             });
+        });
+
+        // Slider Logic
+        const slidesContainer = document.querySelector('.slides');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        const sliderDotsContainer = document.querySelector('.slider-dots');
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active-slide');
+                } else {
+                    slide.classList.remove('active-slide');
+                }
+            });
+            updateDots(index);
+        };
+
+        const nextSlide = () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        };
+
+        const prevSlide = () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            showSlide(currentSlideIndex);
+        };
+
+        const createDots = () => {
+            sliderDotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => {
+                    currentSlideIndex = i;
+                    showSlide(currentSlideIndex);
+                    resetAutoPlay();
+                });
+                sliderDotsContainer.appendChild(dot);
+            });
+            updateDots(currentSlideIndex);
+        };
+
+        const updateDots = (activeIndex) => {
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active-dot', i === activeIndex);
+            });
+        };
+
+        const startAutoPlay = () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(slideInterval);
+        };
+
+        const resetAutoPlay = () => {
+            stopAutoPlay();
+            startAutoPlay();
+        };
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+        sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+        window.addEventListener('load', () => {
+            createDots();
+            showSlide(currentSlideIndex);
+            startAutoPlay();
         });
     </script>
 </body>
